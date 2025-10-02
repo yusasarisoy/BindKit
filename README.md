@@ -1,5 +1,10 @@
-# BindKit
-**Auto Layout, without the headache.**
+<p align="center">
+  <img src="Assets/BindKit.png" alt="BindKit Logo" width="150"> />
+  <h1 align="center">BindKit</h2>
+  <h3 align="center">Auto Layout, without the headache.</h3>
+</p>
+
+---
 
 BindKit is a lightweight, developer-friendly DSL for UIKit Auto Layout.  
 The goal: readable, chainable, headache-free constraints without `NSLayoutConstraint.activate` boilerplate.
