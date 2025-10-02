@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="Assets/BindKit.png" alt="BindKit Logo" width="150"> />
-  <h1 align="center">BindKit</h2>
+  <img src="Assets/BindKit.png" alt="BindKit Logo" width="150">
+  <h1 align="center">BindKit</h1>
   <h3 align="center">Auto Layout, without the headache.</h3>
 </p>
 
