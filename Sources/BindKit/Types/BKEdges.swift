@@ -12,9 +12,9 @@ public enum BKEdges {
     /// All four edges: top, leading, bottom, trailing.
     case all
     /// Horizontal pair: leading & trailing.
-    case horizontal
+    case horizontally
     /// Vertical pair: top & bottom.
-    case vertical
+    case vertically
     /// Custom list of edges (e.g., `[.top, .leading]`).
     case custom([BKEdge])
     
@@ -30,12 +30,12 @@ public enum BKEdges {
                 .bottom,
                 .trailing
             ]
-        case .horizontal:
+        case .horizontally:
             return [
                 .leading,
                 .trailing
             ]
-        case .vertical:
+        case .vertically:
             return [
                 .top,
                 .bottom

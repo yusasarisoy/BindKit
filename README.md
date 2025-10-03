@@ -16,13 +16,25 @@ The goal: readable, chainable, headache-free constraints without `NSLayoutConstr
 ```swift
 titleLabel.bk
     .added(to: contentView)
-    .pinned(.horizontal, to: .view(contentView), insets: .all(12))
-    .pinned(.custom([.bottom]), to: .view(contentView))
+    .pinned(
+        .horizontally,
+        to: .view(contentView),
+        insets: .all(12)
+    )
+    .pinned(
+        .custom([.bottom]),
+        to: .view(contentView)
+    )
+    .pinned(
+        .custom([.top]),
+        to: .view(thumbnailView),
+        insets: .top(6)
+    )
 ```
 
 It almost reads like plain English:  
 “titleLabel was added to contentView, pinned horizontally with 12pt insets,  
-pinned to the bottom of contentView, and placed 6pt below the thumbnail.”
+pinned to the bottom of contentView, and placed 6pt below the thumbnailView.”
 
 ---
 
