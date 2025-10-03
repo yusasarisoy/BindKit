@@ -27,7 +27,7 @@ public extension UIView {
     }
 }
 
-// MARK: - Private Helpers
+// MARK: - Helpers
 
 extension UIView {
     /// Prepares the view for Auto Layout by disabling autoresizing mask translation.
