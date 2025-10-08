@@ -243,6 +243,30 @@ public extension UICollectionView {
         ) as! Element
     }
     
+    /// Dequeues a reusable cell of the specified type for the given index path.
+    ///
+    /// This generic helper eliminates the need to manually provide reuse identifiers
+    /// or perform unsafe type casts.
+    ///
+    /// The cell’s reuse identifier is automatically derived from its type name,
+    /// so make sure you registered it with `registerCell(_:)`.
+    ///
+    /// ```swift
+    /// let cell: OverlayItemCollectionViewCell = collectionView.dequeue(for: indexPath)
+    /// ```
+    ///
+    /// - Parameter indexPath: The index path specifying the location of the cell.
+    /// - Returns: A strongly typed reusable cell instance.
+    func dequeue<Element: UICollectionViewCell>(for indexPath: IndexPath) -> Element {
+        guard let cell = dequeueReusableCell(
+            withReuseIdentifier: String(describing: Element.self),
+            for: indexPath
+        ) as? Element else {
+            fatalError("Failed to dequeue cell of type \(Element.self)")
+        }
+        return cell
+    }
+    
     // MARK: - Scroll Indicator Helpers
     
     /// Sets the horizontal scroll indicator visibility for the collection view.
