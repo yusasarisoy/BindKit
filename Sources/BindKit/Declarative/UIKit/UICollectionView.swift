@@ -247,16 +247,15 @@ public extension UICollectionView {
     
     /// Sets the horizontal scroll indicator visibility for the collection view.
     ///
-    /// Use this modifier in a declarative chain to control whether the horizontal scroll indicator is visible.
+    /// Use in a fluent chain to control whether the horizontal scroll indicator is visible.
     ///
     /// ```swift
-    /// UICollectionView(frame: .zero, collectionViewLayout: layout).bk {
-    ///     $0.showsHorizontalScrollIndicator(false)
-    /// }
+    /// let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    ///     .showsHorizontalScrollIndicator(false)
     /// ```
     ///
     /// - Parameter showsHorizontalScrollIndicator: A Boolean value that determines whether the horizontal scroll indicator is visible.
-    /// - Returns: The same `BK` wrapper instance, allowing further declarative chaining.
+    /// - Returns: The same collection view instance for chaining.
     @discardableResult
     func showsHorizontalScrollIndicator(_ showsHorizontalScrollIndicator: Bool) -> Self {
         self.showsHorizontalScrollIndicator = showsHorizontalScrollIndicator
@@ -265,19 +264,33 @@ public extension UICollectionView {
     
     /// Sets the vertical scroll indicator visibility for the collection view.
     ///
-    /// Use this modifier in a declarative chain to control whether the vertical scroll indicator is visible.
-    ///
     /// ```swift
-    /// UICollectionView(frame: .zero, collectionViewLayout: layout).bk {
-    ///     $0.showsVerticalScrollIndicator(false)
-    /// }
+    /// let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    ///     .showsVerticalScrollIndicator(false)
     /// ```
     ///
     /// - Parameter showsVerticalScrollIndicator: A Boolean value that determines whether the vertical scroll indicator is visible.
-    /// - Returns: The same `BK` wrapper instance, allowing further declarative chaining.
+    /// - Returns: The same collection view instance for chaining.
     @discardableResult
     func showsVerticalScrollIndicator(_ showsVerticalScrollIndicator: Bool) -> Self {
         self.showsVerticalScrollIndicator = showsVerticalScrollIndicator
+        return self
+    }
+    
+    // MARK: - Selection Helpers
+    
+    /// Sets whether the user can select more than one item in the collection view.
+    ///
+    /// ```swift
+    /// let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    ///     .allowsMultipleSelection(false)
+    /// ```
+    ///
+    /// - Parameter allowsMultipleSelection: A Boolean indicating whether multiple items can be selected simultaneously.
+    /// - Returns: The same collection view instance for chaining.
+    @discardableResult
+    func allowsMultipleSelection(_ allowsMultipleSelection: Bool) -> Self {
+        self.allowsMultipleSelection = allowsMultipleSelection
         return self
     }
 }
