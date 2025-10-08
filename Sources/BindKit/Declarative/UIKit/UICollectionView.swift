@@ -242,4 +242,42 @@ public extension UICollectionView {
             for: indexPath
         ) as! Element
     }
+    
+    // MARK: - Scroll Indicator Helpers
+    
+    /// Sets the horizontal scroll indicator visibility for the collection view.
+    ///
+    /// Use this modifier in a declarative chain to control whether the horizontal scroll indicator is visible.
+    ///
+    /// ```swift
+    /// UICollectionView(frame: .zero, collectionViewLayout: layout).bk {
+    ///     $0.showsHorizontalScrollIndicator(false)
+    /// }
+    /// ```
+    ///
+    /// - Parameter showsHorizontalScrollIndicator: A Boolean value that determines whether the horizontal scroll indicator is visible.
+    /// - Returns: The same `BK` wrapper instance, allowing further declarative chaining.
+    @discardableResult
+    func showsHorizontalScrollIndicator(_ showsHorizontalScrollIndicator: Bool) -> Self {
+        self.showsHorizontalScrollIndicator = showsHorizontalScrollIndicator
+        return self
+    }
+    
+    /// Sets the vertical scroll indicator visibility for the collection view.
+    ///
+    /// Use this modifier in a declarative chain to control whether the vertical scroll indicator is visible.
+    ///
+    /// ```swift
+    /// UICollectionView(frame: .zero, collectionViewLayout: layout).bk {
+    ///     $0.showsVerticalScrollIndicator(false)
+    /// }
+    /// ```
+    ///
+    /// - Parameter showsVerticalScrollIndicator: A Boolean value that determines whether the vertical scroll indicator is visible.
+    /// - Returns: The same `BK` wrapper instance, allowing further declarative chaining.
+    @discardableResult
+    func showsVerticalScrollIndicator(_ showsVerticalScrollIndicator: Bool) -> Self {
+        self.showsVerticalScrollIndicator = showsVerticalScrollIndicator
+        return self
+    }
 }
