@@ -9,6 +9,24 @@ import UIKit
 
 public extension UIImage {
     
+    // MARK: - Resource Loader
+    
+    /// Loads an image resource from the app’s asset catalog by name.
+    ///
+    /// This helper provides a declarative, BindKit-style initializer
+    /// for asset-based images.
+    ///
+    /// ```swift
+    /// let icon = UIImage.resource("base")
+    /// imageView.image = icon
+    /// ```
+    ///
+    /// - Parameter name: The name of the image in your asset catalog.
+    /// - Returns: A `UIImage` instance if found, otherwise a placeholder 1×1 transparent image.
+    static func resource(_ name: String) -> UIImage {
+        UIImage(named: name) ?? UIImage()
+    }
+    
     // MARK: - Rendering Mode
     
     /// Returns a copy of the image using the specified rendering mode.
