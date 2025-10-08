@@ -7,7 +7,7 @@
 
 import Testing
 import UIKit
-@testable import BindKit
+@testable import BindKitLayout
 
 @Suite("BKConstraintGroup")
 @MainActor

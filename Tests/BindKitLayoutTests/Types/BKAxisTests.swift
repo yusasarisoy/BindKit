@@ -6,7 +6,7 @@
 //
 
 import Testing
-@testable import BindKit
+@testable import BindKitLayout
 
 @Suite("BKAxis")
 struct BKAxisTests {

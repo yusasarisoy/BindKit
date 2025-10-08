@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "D7A8E853-B1E2-46FB-BCED-6BB5E56FC79F",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "BindKitDeclarativeTests",
+        "name" : "BindKitDeclarativeTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "BindKitLayoutTests",
+        "name" : "BindKitLayoutTests"
+      }
+    }
+  ],
+  "version" : 1
+}

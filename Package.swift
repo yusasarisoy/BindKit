@@ -1,6 +1,4 @@
 // swift-tools-version: 6.2
-// The swift-tools-version declares the minimum version of Swift required to build this package.
-
 import PackageDescription
 
 let package = Package(
@@ -10,17 +8,38 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "BindKit",
-            targets: ["BindKit"]
+            name: "BindKitDeclarative",
+            targets: ["BindKitDeclarative"]
+        ),
+        .library(
+            name: "BindKitLayout",
+            targets: ["BindKitLayout"]
         ),
     ],
     targets: [
+        // Declarative module
         .target(
-            name: "BindKit"
+            name: "BindKitDeclarative",
+            path: "Sources/BindKit/Declarative",
+            resources: []
+        ),
+
+        // Layout module
+        .target(
+            name: "BindKitLayout",
+            path: "Sources/BindKit/Layout",
+            resources: []
+        ),
+
+        .testTarget(
+            name: "BindKitDeclarativeTests",
+            dependencies: ["BindKitDeclarative"],
+            path: "Tests/BindKitDeclarativeTests"
         ),
         .testTarget(
-            name: "BindKitTests",
-            dependencies: ["BindKit"]
+            name: "BindKitLayoutTests",
+            dependencies: ["BindKitLayout"],
+            path: "Tests/BindKitLayoutTests"
         ),
     ]
 )
